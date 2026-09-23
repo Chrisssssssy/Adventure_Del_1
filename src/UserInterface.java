@@ -45,7 +45,7 @@ public class UserInterface {
         if (direction == null) {
             IO.println("Go where? Try north, east, south or west.");
         } else {
-            IO.println("going " + direction);
+            IO.println("Going " + direction);
         }
     }
 
@@ -71,7 +71,7 @@ public class UserInterface {
 
     private void printCurrentRoom (){
         Room room = adventure.getCurrentRoom();
-        IO.println ("you are in Room " + room.getName());
+        IO.println ("You are in Room " + room.getName());
         IO.println(room.getDescription());
 
 

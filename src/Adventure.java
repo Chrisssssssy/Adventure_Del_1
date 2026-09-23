@@ -6,7 +6,6 @@ public class Adventure {
         Room room2 = new Room("Room 2", "Room 2");
         currentRoom = room1;
     }
-
     public Room getCurrentRoom() {
         return currentRoom;
     }
