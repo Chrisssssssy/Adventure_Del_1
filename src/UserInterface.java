@@ -26,7 +26,7 @@ public class UserInterface {
             switch (first) {
                 case "go" -> go(second);
                 case "north", "n", "east", "e", "south", "s", "west", "w" -> go(first);
-                case "look" -> System.out.println("looking around");
+                case "look" -> System.out.println("Looking around");
                 case "help" -> printHelp();
                 case "exit" -> {
                     System.out.println("Goodbye!");
@@ -43,7 +43,7 @@ public class UserInterface {
         if (direction == null) {
             IO.println("Go where? Try north, east, south or west.");
         } else {
-            IO.println("going " + direction);
+            IO.println("Going " + direction);
         }
     }
 
@@ -69,7 +69,7 @@ public class UserInterface {
 
     private void printCurrentRoom (){
         Room room = adventure.getCurrentRoom();
-        IO.println ("you are in Room " + room.getName());
+        IO.println ("You are in Room " + room.getName());
         IO.println(room.getDescription());
 
 
