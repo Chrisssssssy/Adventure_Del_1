@@ -1,7 +1,8 @@
-public class UserInterface {
+public class ConsoleUI
+{
     private final Adventure adventure;
 
-    public UserInterface (Adventure adventure){
+    public ConsoleUI(Adventure adventure){
         this.adventure = adventure;
     }
 

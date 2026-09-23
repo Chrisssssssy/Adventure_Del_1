@@ -1,7 +1,7 @@
 public class Main {
     public static void main() {
         Adventure adventure = new Adventure();
-        UserInterface ui = new UserInterface(adventure);
+        ConsoleUI ui = new ConsoleUI(adventure);
         ui.start();
     }
 }
