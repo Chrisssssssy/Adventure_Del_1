@@ -1,9 +1,4 @@
-import java.util.Scanner;
-
-
-
 public class UserInterface {
-    private final Scanner scanner = new Scanner(System.in);
     private final Adventure adventure;
 
     public UserInterface (Adventure adventure){
@@ -17,7 +12,14 @@ public class UserInterface {
         boolean running = true;
         while (running) {
             IO.print("> ");
-            String input = scanner.nextLine().trim().toLowerCase();
+
+            String line = IO.readln("> ");
+            if (line == null) {
+                IO.println("Goodbye!");
+                break;
+            }
+            String input = line.trim().toLowerCase();
+
             String[] words = input.split("\\s+");
 
             String first = words[0];
@@ -26,14 +28,14 @@ public class UserInterface {
             switch (first) {
                 case "go" -> go(second);
                 case "north", "n", "east", "e", "south", "s", "west", "w" -> go(first);
-                case "look" -> System.out.println("Looking around");
+                case "look" -> IO.println("looking around");
                 case "help" -> printHelp();
                 case "exit" -> {
-                    System.out.println("Goodbye!");
+                    IO.println("Goodbye!");
                     running = false;
                 }
                 case "" -> { }
-                default -> System.out.println("I don't understand '" + input + "'. Type 'help' for commands.");
+                default -> IO.println("I don't understand '" + input + "'. Type 'help' for commands.");
             }
         }
     }
