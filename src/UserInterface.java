@@ -11,12 +11,12 @@ public class UserInterface {
     }
 
     public void start() {
-        System.out.println("Welcome to the adventure! Type 'help' for a list of commands.");
-        print
+        IO.println("Welcome to the adventure! Type 'help' for a list of commands.");
+        printCurrentRoom();
 
         boolean running = true;
         while (running) {
-            System.out.print("> ");
+            IO.print("> ");
             String input = scanner.nextLine().trim().toLowerCase();
             String[] words = input.split("\\s+");
 
@@ -41,9 +41,9 @@ public class UserInterface {
     private void go(String word) {
         String direction = parseDirection(word);
         if (direction == null) {
-            System.out.println("Go where? Try north, east, south or west.");
+            IO.println("Go where? Try north, east, south or west.");
         } else {
-            System.out.println("going " + direction);
+            IO.println("going " + direction);
         }
     }
 
@@ -58,7 +58,7 @@ public class UserInterface {
     }
 
     private void printHelp() {
-        System.out.println("""
+        IO.println("""
                 Commands:
                   go north / go east / go south / go west  - move in a direction
                   (short forms: north, n, go n, etc.)
@@ -68,6 +68,10 @@ public class UserInterface {
     }
 
     private void printCurrentRoom (){
+        Room room = adventure.getCurrentRoom();
+        IO.println ("you are in Room " + room.getName());
+        IO.println(room.getDescription());
+
 
     }
 }
